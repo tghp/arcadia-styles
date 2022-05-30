@@ -465,12 +465,6 @@
 	}
 
 	.editor {
-		> p {
-			> br:only-child {
-				display: none;
-			}
-		}
-
 		p,
 		ul {
 			@include type-body;
@@ -489,10 +483,6 @@
 		}
 
 		h1 {
-			@include type-heading-1;
-		}
-
-		h2 {
 			@include type-heading-2;
 			color: var(--arcadia-marine-blue);
 
@@ -501,17 +491,21 @@
 			}
 		}
 		
-		h3 {
+		h2 {
 			@include type-heading-3;
 			color: var(--arcadia-marine-blue);
 		}
 
-		h4 {
+		h3 {
 			@include type-heading-4;
 			color: var(--arcadia-marine-blue);
 		}
 
 		ul {
+			ul {
+				margin-bottom: 0;
+			}
+			
 			li {
 				> p {
 					margin: 0;

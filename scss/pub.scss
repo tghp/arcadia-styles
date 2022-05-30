@@ -175,6 +175,7 @@
                 .small-header-button-component {
                     background: var(--arcadia-white);
                     color: var(--arcadia-forest);
+                    padding: 6px 8px 6px 20px;
                 }
             }
         }
@@ -214,10 +215,10 @@
         margin: 0;
 
         .editor {
-            h2:first-child,
-            h2:first-child ~ p:not(h2 ~ h2 ~ p),
-            h2:first-child ~ ul:not(h2 ~ h2 ~ ul),
-            h2:first-child ~ blockquote:not(h2 ~ h2 ~ blockquote) {
+            h1:first-child,
+            h1:first-child ~ p:not(h1 ~ h1 ~ p),
+            h1:first-child ~ ul:not(h1 ~ h1 ~ ul),
+            h1:first-child ~ blockquote:not(h1 ~ h1 ~ blockquote) {
                 @include full-bleed-background(var(--arcadia-light-grey), $extra: true);
 
                 &:before {
@@ -226,12 +227,12 @@
                 }
             }
 
-            h2:first-child ~ blockquote:not(h2 ~ h2 ~ blockquote) {
+            h1:first-child ~ blockquote:not(h1 ~ h1 ~ blockquote) {
                 border: 1px solid var(--arcadia-white);
                 background: transparent;
             }
 
-            h2:first-child {
+            h1:first-child {
                 margin-top: 60px;
 
                 &:before {
@@ -239,90 +240,6 @@
                 }
             }
             
-            > ul {
-                &:nth-last-child(1),
-                &:nth-last-child(2),
-                &:nth-last-child(3),
-                &:nth-last-child(4),
-                &:nth-last-child(5) {
-                    &:not(:last-child) {
-                        border-bottom: 1px solid var(--arcadia-light-grey);
-                        padding-bottom: 35px;
-                        margin-bottom: 35px;
-                    }
-
-                    &,
-                    li {
-                        list-style: none;
-                        padding: 0;
-                        margin: 0;
-                    }
-
-                    ul {
-                        margin: 0;
-                    }
-
-                    > li {
-                        display: grid;
-                        grid-template-columns: 200px 1fr;
-                        gap: 20px;
-
-                        > p {
-                            @include type-heading-4;
-                            display: flex;
-                            justify-content: space-between;
-                            color: var(--arcadia-marine-blue);
-
-                            &:after {
-                                @include pseudo-element-create;
-                                background-image: $az-svg;
-                                background-size: 100% auto;
-                                background-repeat: no-repeat;
-                                width: 12px;
-                                height: 12px;
-                                margin-top: .4em;
-                            }
-                        }
-
-                        > ul {
-                            p {
-                                @include type-caption;
-                                color: var(--arcadia-black);
-                            }
-
-                            > li {
-                                display: flex;
-                                
-                                &:not(:last-child) {
-                                    margin-bottom: 14px;
-                                }
-
-                                > p:not(:only-child) {
-                                    font-weight: 400;
-                                    margin-right: 12px;
-
-                                    &:first-child {
-                                        display: flex;
-
-                                        &:after {
-                                            @include pseudo-element-create;
-                                            content: '•';
-                                            color: var(--arcadia-orange);
-                                            margin-left: 12px;
-                                        }
-                                    }
-                                }
-
-                                > ul {
-                                    font-weight: 300;
-                                    padding: 0;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
             figure {
                 display: flex;
                 flex-direction: column;
@@ -348,6 +265,8 @@
                         > strong {
                             @include type-meta-caption;
                             color: var(--arcadia-marine-blue);
+                            display: block;
+                            margin-bottom: 10px;
                         }
                     }
                     
@@ -365,6 +284,93 @@
             .local-highlight {
                 background: var(--arcadia-shell);
                 font-weight: 400;
+            }
+
+            // Styles only on frontend
+            &[contenteditable="false"] {
+                > ul {
+                    &:nth-last-child(1),
+                    &:nth-last-child(2),
+                    &:nth-last-child(3),
+                    &:nth-last-child(4),
+                    &:nth-last-child(5) {
+                        &:not(:last-child) {
+                            border-bottom: 1px solid var(--arcadia-light-grey);
+                            padding-bottom: 35px;
+                            margin-bottom: 35px;
+                        }
+    
+                        &,
+                        li {
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+                        }
+    
+                        ul {
+                            margin: 0;
+                        }
+    
+                        > li {
+                            display: grid;
+                            grid-template-columns: 200px 1fr;
+                            gap: 20px;
+    
+                            > p {
+                                @include type-heading-4;
+                                display: flex;
+                                justify-content: space-between;
+                                color: var(--arcadia-marine-blue);
+    
+                                &:after {
+                                    @include pseudo-element-create;
+                                    background-image: $az-svg;
+                                    background-size: 100% auto;
+                                    background-repeat: no-repeat;
+                                    width: 12px;
+                                    height: 12px;
+                                    margin-top: .4em;
+                                }
+                            }
+    
+                            > ul {
+                                p {
+                                    @include type-caption;
+                                    color: var(--arcadia-black);
+                                }
+    
+                                > li {
+                                    display: flex;
+                                    
+                                    &:not(:last-child) {
+                                        margin-bottom: 14px;
+                                    }
+    
+                                    > p:not(:only-child) {
+                                        font-weight: 400;
+                                        margin-right: 12px;
+    
+                                        &:first-child {
+                                            display: flex;
+    
+                                            &:after {
+                                                @include pseudo-element-create;
+                                                content: '•';
+                                                color: var(--arcadia-orange);
+                                                margin-left: 12px;
+                                            }
+                                        }
+                                    }
+    
+                                    > ul {
+                                        font-weight: 300;
+                                        padding: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
