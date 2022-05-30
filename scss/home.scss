@@ -101,6 +101,8 @@
 
     .home-signpost {
         @include full-bleed-background(var(--arcadia-shell));
+        display: block;
+        text-decoration: none;
 
         &__title {
             @include type-heading-1;
