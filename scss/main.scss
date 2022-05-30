@@ -31,7 +31,7 @@
 		*/
 
 	h1, h2, h3, h4 {
-		font-weight: 300;
+		font-weight: 400;
 	}
 
 	a {
@@ -40,7 +40,7 @@
 	}
 
 	strong {
-		font-weight: 400;
+		font-weight: 600;
 	}
 
 	/**
@@ -306,7 +306,7 @@
 		padding: 40px 0 36px;
 		background: transparent;
 		font-size: 12px;
-		font-weight: 400;
+		font-weight: 600;
 
 		a {
 			color: var(--arcadia-white);
@@ -439,13 +439,13 @@
 
 		> li {
 			> a {
-				font-weight: 400;
+				font-weight: 600;
 				padding-left: 0;
 			}
 
 			> ul {
 				a {
-					font-weight: 300;
+					font-weight: 400;
 				}
 			}
 		}
@@ -453,7 +453,7 @@
 
 	.note-popover-component {
 		@include type-caption;
-		font-weight: 400;
+		font-weight: 600;
 		box-shadow: none;
 		background: var(--arcadia-light-grey);
 		border: 1px solid var(--arcadia-marine-blue);
@@ -536,7 +536,7 @@
 		span.citation {
 			&,
 			&:hover {
-				font-weight: 400;
+				font-weight: 600;
 				color: var(--arcadia-marine-blue);
 			}
 		}

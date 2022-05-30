@@ -84,7 +84,7 @@
                     }
 
                     strong {
-                        font-weight: 400;
+                        font-weight: 600;
                     }
                     
                     p {
@@ -93,7 +93,7 @@
                         
                         &:first-child:not(:only-child) {
                             display: block;
-                            font-weight: 300;
+                            font-weight: 400;
                             color: var(--arcadia-marine-blue);
                         }
                     }
