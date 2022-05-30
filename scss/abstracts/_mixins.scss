@@ -183,28 +183,30 @@
     }
 }
 
-
-
 @mixin when-home {
+    // Only way to match the home page is the lack of the other selectors, which are present on all other types of pages
     html[data-reactroot] > head + body.layout-body-wrapper:not([class*="active-page-"]):not([class*="active-collection-"]) {
         @content;
     }
 }
 
 @mixin when-project {
+    // Look for a class name containing active-collection-, there is no generic collection class added, so this is the only way
     html[data-reactroot] > head + body[class*="active-collection-"] {
         @content;
     }
 }
 
 @mixin when-pub {
+    // Look for a class name containing active-pub-, there is no generic pub class added, so this is the only way
     html[data-reactroot] > head + body[class*="active-pub-"] {
         @content;
     }
 }
 
 @mixin when-any {
-    html[data-reactroot] > head + body[class] {
+    // Increase specificity with combination of selectors
+    html[data-reactroot] > head + body {
         @content;
     }
 }
