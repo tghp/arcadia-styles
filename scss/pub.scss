@@ -347,7 +347,7 @@
                     }
     
                     p:first-child:not(:only-child) {
-                        @include type-meta;
+                        @include type-meta-caption;
                         color: var(--arcadia-marine-blue);
                     }
                     

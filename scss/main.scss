@@ -470,6 +470,7 @@
 		p,
 		ul {
 			@include type-body;
+			font-weight: 400;
 			margin: 0 0 1.5em;
 
 			+ blockquote {
@@ -670,8 +671,17 @@
 					margin-top: 15px;
 				}
 
+				.authors {
+					padding: 0;
+					margin: 10px 0 0;
+
+					.text-wrapper {
+						@include type-body-smaller;
+						font-style: normal;
+					}
+				}
+
 				.bp3-popover-wrapper,
-				.authors,
 				.pub-preview-edges-component {
 					display: none;
 				}
