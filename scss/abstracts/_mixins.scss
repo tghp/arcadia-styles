@@ -207,7 +207,7 @@
 
 @mixin when-any {
     // Increase specificity with combination of selectors
-    html[data-reactroot] > head + body {
+    html[data-reactroot] > head + body[class] {
         @content;
     }
 }
