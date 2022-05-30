@@ -344,11 +344,11 @@
                         &:empty {
                             display: none;
                         }
-                    }
-    
-                    p:first-child:not(:only-child) {
-                        @include type-meta-caption;
-                        color: var(--arcadia-marine-blue);
+
+                        > strong {
+                            @include type-meta-caption;
+                            color: var(--arcadia-marine-blue);
+                        }
                     }
                     
                     p {
