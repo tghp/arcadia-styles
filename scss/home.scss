@@ -1,0 +1,258 @@
+@use './abstracts/mq-settings';
+@use './abstracts/mq';
+@import "./common";
+
+@include when-home {
+    .block-content,
+    .row > * {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    p {
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .layout-banner-component {
+        @include full-bleed;
+
+        &:first-child {
+            height: 515px;
+
+            .block-content {
+                height: 100%;
+                border-bottom: 1px solid var(--arcadia-charcoal);
+            }
+
+            .dim {
+                display: none;
+            }
+        }
+    }
+
+    .home-signpost,
+    .home-intro,
+    .home-projects,
+    .home-pub-intro,
+    .layout-pubs-block {
+        padding: $spacing-block-std 0;
+    }
+
+    .home-intro,
+    .home-pitch {
+        display: grid;
+
+        @include mq.mq($from: xl) {
+            grid-template-columns: 56fr 18fr 56fr;
+            grid-template-rows: repeat(3, auto);
+            grid-template-areas:
+                "pre     pre pre"
+                "primary gap secondary"
+                "primary gap tertiary";
+        }
+
+        @include mq.mq($until: xl) {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4, auto);
+            grid-template-areas: 
+                "pre"
+                "primary"
+                "secondary"
+                "tertiary";
+        }
+    }
+
+    .home-intro {
+        &:before {
+            @include mq.mq($from: xl) {
+                @include pseudo-element-create;
+                grid-area: gap;
+                width: 1px;
+                height: 100%;
+                background: var(--arcadia-black-50);
+                justify-self: center;
+            }
+        }
+
+        &__title {
+            @include type-heading-1-larger;
+            grid-area: primary;
+        }
+
+        &__body {
+            grid-area: secondary;
+        }
+
+        .button {
+            grid-area: tertiary;
+            margin-top: 30px;
+
+            a {
+                @include button-pill;
+            }
+        }
+    }        
+
+    .home-signpost {
+        @include full-bleed-background(var(--arcadia-shell));
+
+        &__title {
+            @include type-heading-1;
+            display: flex;
+            align-items: center;
+            line-height: 1;
+            margin: 0;
+
+            &:after {
+                @include pseudo-element-create;
+                background-image: $arrow-down-svg;
+                background-size: 100% auto;
+                width: 25px;
+                height: 34px;
+                margin-left: 45px;
+            }
+        }
+    }
+
+    .home-pitch {
+        $self: '.home-pitch';
+        padding: 60px 0;
+
+        &--dark {
+            @include full-bleed-background(var(--arcadia-forest));
+            
+            * {
+                color: var(--arcadia-white);
+            }
+
+            #{$self}__title {
+                border-color: var(--arcadia-white-50);
+                color: var(--arcadia-seafoam);
+            }
+        }
+
+        &--light {
+            #{$self}__title {
+                border-color: var(--arcadia-black-50);
+                color: var(--arcadia-forest);
+            }
+
+            #{$self}__secondary {
+                #{$self}__subtitle {
+                    color: var(--arcadia-forest);
+                }
+            }
+        }
+
+        &__title {
+            @include type-heading-3;
+            grid-area: pre;
+            border-bottom: 1px solid;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        &__main {
+            grid-area: primary;
+
+            @include mq.mq($until: xl) {
+                margin-bottom: 30px;
+            }
+
+            #{$self}__subtitle {
+                @include type-heading-1;
+
+                @include mq.mq($from: xl) {
+                    max-width: 420px;
+                }
+            }
+        }
+
+        &__secondary {
+            grid-area: secondary;
+            padding-top: 10px;
+
+            #{$self}__subtitle {
+                @include type-heading-2;
+
+                &:not(:first-child) {
+                    margin-top: 30px;
+                }
+            }
+
+            #{$self}__body {
+                p {
+                    @include type-body-smaller;
+                }
+            }
+        }
+    }
+
+    .home-projects {
+        @include full-bleed-background(var(--arcadia-dawn));
+
+        &__main {
+            display: grid;
+            border-top: 1px solid var(--arcadia-shell);
+            padding-top: 40px;
+            margin-top: 50px;
+
+            @include mq.mq($from: l) {
+                grid-template-columns: repeat(2, 1fr);    
+            }
+        }
+
+        &__card {
+            @include mq.mq($from: l) {
+                margin-right: 85px;
+            }
+
+            @include mq.mq($until: l) {
+                &:not(:last-child) {
+                    margin-bottom: 50px;
+                }
+            }
+
+            &-name {
+                @include type-heading-2;
+                margin-bottom: 20px;
+                color: var(--arcadia-forest);
+            }
+
+            &-link {
+                @include button-line;
+            }
+        }
+    }
+
+    .home-projects,
+    .home-pub-intro {
+        &__title {
+            @include type-heading-1;
+            border-top: 1px solid var(--arcadia-charcoal);
+            padding-top: 30px;
+            margin: 0 0 30px;
+        }
+    }
+
+    .home-pub-intro,
+    .layout-pubs-block {
+        @include full-bleed-background(var(--arcadia-light-grey));
+    }
+
+    .home-pub-intro {
+        padding-bottom: 0;
+    }
+
+    /**
+        * Common blocks
+        */
+
+    @include questions;
+}
