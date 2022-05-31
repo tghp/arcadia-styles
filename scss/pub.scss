@@ -5,6 +5,21 @@
 @include when-pub {
     background-color: var(--arcadia-white);
 
+    .pub-historical-notice-component {
+        @include full-bleed-background(var(--arcadia-dawn), $extra: true);
+        margin: 0;
+        padding: 20px 0 10px;
+
+        &,
+        .bp3-callout {
+            background: transparent;
+        }
+
+        .bp3-button {
+            @include button-pill;
+        }
+    }
+
     .pub-header-component {
         position: relative !important;
         top: 0 !important;
