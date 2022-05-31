@@ -1,0 +1,210 @@
+
+/* Contents of Custom CSS stored here for prosperity */
+
+@font-face {
+  font-family: "SuisseIntl-Regular";
+  src: url("https://assets.pubpub.org/49fj3luw/61651094307009.otf") format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "SuisseIntl-Thin";
+  src: url("https://assets.pubpub.org/w2t59jc3/41651094479280.otf") format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "SuisseIntl-Regular-Italic";
+  src: url("https://assets.pubpub.org/1oauaqz4/21651094445896.otf") format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "SuisseIntl-Thin-Italic";
+  src: url("https://assets.pubpub.org/rat08671/41651094506213.otf") format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "SuisseIntl-Mono-Regular";
+  src: url("https://assets.pubpub.org/d3nsiaym/61651094531116.otf") format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "SuisseWorks-Regular";
+  src: url("https://assets.pubpub.org/e78p9ocy/51651094590705.otf") format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "SuisseWorks-Regular-Italic";
+  src: url("https://assets.pubpub.org/3jrri1zg/01651094608582.otf") format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+body {
+  font-family: "SuisseIntl-Regular", sans-serif !important;
+}
+
+.pub-body-wrapper .pub-header-component h1 {
+    font-family: "SuisseIntl-Thin", -apple-system,"BlinkMacSystemFont","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Open Sans","Helvetica Neue",sans-serif,source-han-sans-cjk-tc,source-han-sans-cjk-ko,source-han-sans-cjk-ja,source-han-sans-cjk-sc !important;
+    font-size: 46px;
+    @media only screen and (max-width: 1000px) {
+      font-size: 32px;
+    }
+    @media only screen and (max-width: 750px) {
+      font-size: 24px;
+    }
+}
+
+.pub-body-wrapper .pub-header-component h3 {
+  font-family: "SuisseIntl-Regular",-apple-system,"BlinkMacSystemFont","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Open Sans","Helvetica Neue",sans-serif,source-han-sans-cjk-tc,source-han-sans-cjk-ko,source-han-sans-cjk-ja,source-han-sans-cjk-sc !important;
+    font-size: 16px;
+}
+
+.pub-body-wrapper .pub-header-component .description {
+    font-family: "SuisseIntl-Regular",-apple-system,"BlinkMacSystemFont","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Open Sans","Helvetica Neue",sans-serif,source-han-sans-cjk-tc,source-han-sans-cjk-ko,source-han-sans-cjk-ja,source-han-sans-cjk-sc !important;
+    font-size: 18px;
+    font-style: normal;
+}
+
+.pub-body-wrapper .pub-header-component .byline {
+    font-family: "SuisseWorks-Regular-Italic",Georgia,Cambria,"Times New Roman",Times,serif !important;
+    font-size: 18px;
+    font-style: normal;
+}
+
+.pub-header-sticky-component .sticky-title {
+  font-family: "SuisseIntl-Thin",-apple-system,"BlinkMacSystemFont","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Open Sans","Helvetica Neue",sans-serif,source-han-sans-cjk-tc,source-han-sans-cjk-ko,source-han-sans-cjk-ja,source-han-sans-cjk-sc !important;
+  font-size: 18px;
+}
+
+.pub-body-component .editor.ProseMirror p, .pub-body-styles p {
+    font-family: "SuisseIntl-Regular",-apple-system,"BlinkMacSystemFont","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Open Sans","Helvetica Neue",sans-serif,source-han-sans-cjk-tc,source-han-sans-cjk-ko,source-han-sans-cjk-ja,source-han-sans-cjk-sc !important;
+    font-size: 16px !important;
+}
+
+.pub-body-component .editor.ProseMirror li, .pub-body-styles li {
+    font-family: "SuisseIntl-Regular",-apple-system,"BlinkMacSystemFont","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Open Sans","Helvetica Neue",sans-serif,source-han-sans-cjk-tc,source-han-sans-cjk-ko,source-han-sans-cjk-ja,source-han-sans-cjk-sc !important;
+    font-size: 16px !important;
+}
+
+.pub-body-component .editor.ProseMirror h1, .pub-body-styles h1 {
+    font-family: "SuisseIntl-Thin",-apple-system,"BlinkMacSystemFont","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Open Sans","Helvetica Neue",sans-serif,source-han-sans-cjk-tc,source-han-sans-cjk-ko,source-han-sans-cjk-ja,source-han-sans-cjk-sc !important;
+    font-size: 1.6em;
+    font-weight: normal;
+}
+
+.pub-body-component .editor.ProseMirror h2, .pub-body-styles h2 {
+    font-family: "SuisseIntl-Regular",-apple-system,"BlinkMacSystemFont","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Open Sans","Helvetica Neue",sans-serif,source-han-sans-cjk-tc,source-han-sans-cjk-ko,source-han-sans-cjk-ja,source-han-sans-cjk-sc !important;
+    font-weight: normal;
+}
+
+.pub-body-component .editor.ProseMirror h3, .pub-body-styles h3 {
+    font-family: "SuisseWorks-Regular",Georgia,Cambria,"Times New Roman",Times,serif !important;
+    font-weight: normal;
+}
+
+.pub-body-component .editor.ProseMirror h4, .pub-body-styles h4 {
+    font-family: "SuisseWorks-Regular",Georgia,Cambria,"Times New Roman",Times,serif !important;
+    font-weight: normal;
+}
+
+.pub-body-component .editor.ProseMirror h5, .pub-body-styles h5 {
+    font-family: "SuisseWorks-Regular",Georgia,Cambria,"Times New Roman",Times,serif !important;
+    font-weight: normal;
+    font-size: 16px !important;
+}
+
+.pub-body-component .editor.ProseMirror figcaption p, .pub-body-styles figcaption p {
+    font-family: "SuisseIntl-Regular",Georgia,Cambria,"Times New Roman",Times,serif !important;
+    font-size: 13px !important;
+    line-height: 18px;
+}
+
+.pub-body-component .editor.ProseMirror figcaption div, .pub-body-styles figcaption div {
+    font-family: "SuisseWorks-Regular",monospace !important;
+    font-size: 14px !important;
+    padding: 0.5em;
+    line-height: 18px;
+}
+
+.pub-body-component .editor.ProseMirror .discussion-component .anchor-text {
+    font-family: "SuisseIntl-Regular", -apple-system,"BlinkMacSystemFont","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Open Sans","Helvetica Neue",sans-serif,source-han-sans-cjk-tc,source-han-sans-cjk-ko,source-han-sans-cjk-ja,source-han-sans-cjk-sc !important;
+    font-size: 12px !important;
+    padding: 0.5em;
+    line-height: 18px;
+}
+
+.pub-body-component .editor.ProseMirror .discussion-component .discussion-body-wrapper p {
+    font-size: 14px !important;
+}
+
+.layout-body-wrapper .layout-component .block-content h1 {
+    font-family: "SuisseIntl-Thin", -apple-system,"BlinkMacSystemFont","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Open Sans","Helvetica Neue",sans-serif,source-han-sans-cjk-tc,source-han-sans-cjk-ko,source-han-sans-cjk-ja,source-han-sans-cjk-sc !important;
+    font-size: 2.5rem !important;
+    font-weight: normal;
+}
+
+.layout-body-wrapper .layout-component .block-content h2 {
+    font-family: "SuisseIntl-Thin", -apple-system,"BlinkMacSystemFont","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Open Sans","Helvetica Neue",sans-serif,source-han-sans-cjk-tc,source-han-sans-cjk-ko,source-han-sans-cjk-ja,source-han-sans-cjk-sc !important;
+    font-size: 2rem !important;
+    font-weight: normal;
+}
+
+.layout-body-wrapper .layout-component .pub-preview-component .pub-title {
+    font-family: "SuisseWorks-Regular",Georgia,Cambria,"Times New Roman",Times,serif !important;
+    font-size: 20px;
+    line-height: 28px !important;
+    font-weight: normal;
+}
+
+.layout-body-wrapper .layout-component .pub-preview-component .byline {
+    font-family: "SuisseIntl-Regular",-apple-system,"BlinkMacSystemFont","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Open Sans","Helvetica Neue",sans-serif,source-han-sans-cjk-tc,source-han-sans-cjk-ko,source-han-sans-cjk-ja,source-han-sans-cjk-sc !important;
+    line-height: 22px;
+    font-size: 14px;
+    font-style: normal;
+}
+
+.layout-body-wrapper .layout-component .pub-preview-component .date-details .date {
+    font-family: "SuisseIntl-Mono-Regular",monospace !important;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.layout-body-wrapper .layout-component .pub-preview-component .description {
+    font-family: "SuisseIntl-Regular",-apple-system,"BlinkMacSystemFont","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Open Sans","Helvetica Neue",sans-serif,source-han-sans-cjk-tc,source-han-sans-cjk-ko,source-han-sans-cjk-ja,source-han-sans-cjk-sc !important;
+    font-size: 14px;
+}
+
+.layout-body-wrapper .layout-component .pub-preview-component .contributor-avatars {
+    margin-top: 10px;
+}
+
+.layout-body-wrapper .layout-component .layout-collection-header-component h1 {
+    font-family: "SuisseIntl-Thin", -apple-system,"BlinkMacSystemFont","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Open Sans","Helvetica Neue",sans-serif,source-han-sans-cjk-tc,source-han-sans-cjk-ko,source-han-sans-cjk-ja,source-han-sans-cjk-sc !important;
+    font-size: 2.5rem;
+    font-weight: normal;
+}
+
+* Fixes overflow caused by custom description font height *
+.pub-header-component .description.pub-header-themed-secondary .bp3-editable-text-content, 
+.pub-header-component .description.pub-header-themed-secondary .bp3-editable-text.bp3-multiline  {
+  height: auto !important;
+}
