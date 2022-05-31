@@ -751,10 +751,16 @@
         padding: 0;
 
         > li {
-            &:nth-child(1),
-            &:nth-child(2) {
-                display: none;
+            &:nth-child(1) {
+                .bp3-menu-item {
+                    @include type-heading-4-smaller;
+                    color: var(--arcadia-forest);
+                }
             }
+        }
+
+        .bp3-menu-divider {
+            display: none;
         }
 
         .bp3-menu-item {
@@ -776,6 +782,7 @@
         .menu-item-text {
             .title {
                 @include type-heading-4-smaller;
+                font-weight: 400;
             }
 
             .byline-component {
