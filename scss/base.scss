@@ -678,8 +678,24 @@
 					}
 				}
 
-				.bp3-popover-wrapper,
 				.pub-preview-edges-component {
+					margin: 20px 0 0;
+					.hairline {
+						display: none;
+					}
+
+					.heading {
+						color: var(--arcadia-forest) !important;
+					}
+
+					.listing {
+						strong {
+							color: var(--arcadia-forest) !important;
+						}
+					}
+				}
+
+				.bp3-popover-wrapper {
 					display: none;
 				}
 			}
