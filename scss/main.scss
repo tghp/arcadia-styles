@@ -430,24 +430,24 @@
 					text-decoration: underline;
 				}
 			}
+
+			&.level-1 {
+				padding-left: 0;
+				font-weight: 600;
+			}
+
+			&.level-2 {
+				padding-left: 20px;
+			}
+
+			&.level-3 {
+				padding-left: 40px;
+			}
 		}
 
 		.bp3-menu-header {
 			margin: 0;
 			padding: 0 0 5px;
-		}
-
-		> li {
-			> a {
-				font-weight: 600;
-				padding-left: 0;
-			}
-
-			> ul {
-				a {
-					font-weight: 400;
-				}
-			}
 		}
 	}
 
