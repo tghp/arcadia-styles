@@ -411,7 +411,7 @@
                             gap: 20px;
                             
                             @include mq.mq($from: l) {
-                                grid-template-columns: 150px 1fr;
+                                grid-template-columns: minmax(200px, auto) 1fr;
                             }
 
                             @include mq.mq($until: l) {
@@ -423,6 +423,7 @@
                                 display: flex;
                                 justify-content: space-between;
                                 color: var(--arcadia-marine-blue);
+                                white-space: nowrap;
                             }
     
                             > ul {
