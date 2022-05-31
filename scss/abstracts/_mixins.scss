@@ -244,12 +244,12 @@
 
 		&__buttons {
 			display: flex;
-			margin-top: 30px;
             flex-wrap: wrap;
+            margin: 25px -15px -5px;
 
 			.button {
 				@include button-pill;
-				margin-right: 25px;
+                margin: 5px 15px;
 			}
 		}
 	}
