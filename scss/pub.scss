@@ -76,6 +76,12 @@
 
         .large-header-button-component,
         .small-header-button-component {
+            .label {
+                @include type-heading-4-smaller;
+                text-transform: none;
+                font-weight: 400;
+            }
+
             &,
             &:hover {
                 box-shadow: none;
@@ -88,8 +94,11 @@
             border-bottom: 1px solid;
             padding: 10px 0;
             margin-bottom: 40px;
+            font-weight: 400;
 
             .collections-bar-component {
+                font-weight: 400;
+
                 .collections-bar-button-component {
                     font-family: 'SuisseIntl', sans-serif;
                     border: none;
@@ -128,7 +137,7 @@
 
                 b {
                     font-family: 'SuisseIntl', sans-serif;
-                    font-weight: 600;
+                    font-weight: 400;
                     margin-right: 16px;
                 }
             }
@@ -203,13 +212,19 @@
                             display: none;
                         }
                     }
-                    
+                
                     .pub-header-themed-box {
                         &:after {
                             display: none;
                         }
                     }
                 }
+            }
+        }
+
+        .description {
+            .text-wrapper {
+                @include type-body;
             }
         }
 
@@ -384,16 +399,6 @@
                                 display: flex;
                                 justify-content: space-between;
                                 color: var(--arcadia-marine-blue);
-    
-                                &:after {
-                                    @include pseudo-element-create;
-                                    background-image: $az-svg;
-                                    background-size: 100% auto;
-                                    background-repeat: no-repeat;
-                                    width: 12px;
-                                    height: 12px;
-                                    margin-top: .4em;
-                                }
                             }
     
                             > ul {
@@ -707,6 +712,43 @@
                 &[disabled] {
                     opacity: 0.5;
                 }
+            }
+        }
+    }
+
+    ul.bp3-menu.collection-browser-component_menu {
+        padding: 0;
+
+        > li {
+            &:nth-child(1),
+            &:nth-child(2) {
+                display: none;
+            }
+        }
+
+        .bp3-menu-item {
+            padding: 15px;
+
+            &.bp3-active {
+                background: var(--arcadia-dawn);
+            }
+
+            &:hover {
+                background: var(--arcadia-light-grey);
+            }
+        }
+
+        .bp3-icon {
+            display: none;
+        }
+
+        .menu-item-text {
+            .title {
+                @include type-heading-4-smaller;
+            }
+
+            .byline-component {
+                display: none;
             }
         }
     }
