@@ -12,40 +12,43 @@
         }
     }
 
-    h1 {
-        @include type-heading-1;
-        
-        @include mq.mq($from: l) {
-            margin: 80px 0 30px;
+    &,
+    .editor {
+        h1 {
+            @include type-heading-1;
+            
+            @include mq.mq($from: l) {
+                margin: 80px 0 30px;
+            }
+            
+            @include mq.mq($until: l) {
+                margin: 50px 0 20px;
+            }
         }
-        
-        @include mq.mq($until: l) {
-            margin: 50px 0 20px;
+
+        h2,
+        h3 {
+            color: var(--arcadia-marine-blue);
+            margin: 42px 0 20px;
         }
-    }
 
-    h2,
-    h3 {
-        color: var(--arcadia-marine-blue);
-        margin: 42px 0 20px;
-    }
+        h2 {
+            @include type-heading-2;
+            
+        }
 
-    h2 {
-        @include type-heading-2;
-        
-    }
+        h3 {
+            @include type-heading-3;
+        }
 
-    h3 {
-        @include type-heading-3;
-    }
-
-    hr {
-        border-top: 1px solid var(--arcadia-shell);
-        border-bottom: none;
-        margin-bottom: 35px;
-        
-        @include mq.mq($from: l) {
-            margin-right: -43.4%;
+        hr {
+            border-top: 1px solid var(--arcadia-shell);
+            border-bottom: none;
+            margin-bottom: 35px;
+            
+            @include mq.mq($from: l) {
+                margin-right: -43.4%;
+            }
         }
     }
 
