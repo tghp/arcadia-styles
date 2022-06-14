@@ -20,6 +20,16 @@
         }
     }
 
+    .pub-draft-header-component {
+        @include mq.mq($from: s) {
+            top: $header-height !important;
+        }
+
+        @include mq.mq($until: s) {
+            top: $header-height-mobile !important;
+        }
+    }
+
     .pub-header-component {
         position: relative !important;
         top: 0 !important;
