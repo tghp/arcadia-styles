@@ -36,6 +36,14 @@
         }
     }
 
+    /**
+     * Common blocks
+     */
+
+    @include questions;
+}
+
+@include when-any {
     .home-signpost,
     .home-intro,
     .home-projects,
@@ -252,10 +260,4 @@
     .home-pub-intro {
         padding-bottom: 0;
     }
-
-    /**
-        * Common blocks
-        */
-
-    @include questions;
 }
