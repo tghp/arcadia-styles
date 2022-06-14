@@ -206,34 +206,8 @@
 			min-height: 0;
 			min-width: 0;
 
-			// Inbox
 			&[aria-label*="Dashboard"] {
 				display: none !important;
-				
-				+ [aria-haspopup="dialog"] {
-					display: none;
-				}
-				
-				// Hidden in case this comes back as hiding was a last minute change
-				// @include mq.mq($until: m) {
-				// 	display: none !important;
-				// }
-
-				// &:after {
-				// 	@include pseudo-element-create;
-				// 	background: $menu-caret-svg;
-				// 	width: 11px;
-				// 	height: 7px;
-				// 	margin-left: 5px;
-				// }
-
-				// .bp3-icon {
-				// 	display: none;
-				// }
-
-				// & + .bp3-button[aria-haspopup="dialog"] {
-				// 	display: none;
-				// }
 			}
 
 			&[aria-label*="User"] {
@@ -243,10 +217,6 @@
 				@include mq.mq($until: m) {
 					display: none !important;
 				}
-			}
-
-			.bp3-icon-inbox-update {
-				display: none;
 			}
 
 			&:hover {
@@ -723,5 +693,9 @@
 				}
 			}
 		}
+	}
+
+	.user-notifications-popover {
+		z-index: 314159 !important;
 	}
 }
