@@ -181,6 +181,11 @@
             }
         }
 
+        .pub-toc-component {
+            max-height: calc(100vh - 440px);
+            overflow: scroll;
+        }
+
         .show-header-details-button,
         .details-button {
             display: none;
