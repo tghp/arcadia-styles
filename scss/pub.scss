@@ -697,6 +697,10 @@
         svg {
             fill: var(--arcadia-forest);
         }
+        
+        .inner {
+            overflow: hidden;
+        }
 
         .pub-discussions-component {
             .thread-comment-component.input {
