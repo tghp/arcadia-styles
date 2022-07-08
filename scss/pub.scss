@@ -3,8 +3,6 @@
 @import "./common";
 
 @include when-pub {
-    background-color: var(--arcadia-white);
-
     .pub-historical-notice-component {
         @include full-bleed-background(var(--arcadia-dawn), $extra: true);
         margin: 0;
@@ -114,6 +112,14 @@
             }
         }
 
+        .small-header-button-component {
+            .icon-container {
+                @include mq.mq($from: m) {
+                    background: var(--arcadia-white-20);
+                }
+            }
+        }
+
         .pub-header-top-area {
             @include type-meta;
             border-bottom: 1px solid;
@@ -161,10 +167,26 @@
                 display: flex;
                 flex-wrap: wrap;
                 margin: -12px -12px -12px 0;
+                flex-grow: 1;
+                max-width: 840px;
             }
 
             .metadata-pair {
                 margin: 12px;
+                line-height: 1;
+
+                &:not(:nth-last-child(2)) {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+
+                &.doi-pair {
+                    .pub-header-themed-secondary {
+                        border: 1px solid;
+                        padding: 3px 5px 2px;
+                        margin-top: -1px;
+                    }
+                }
 
                 > :first-child {
                     font-family: 'SuisseIntl', sans-serif;
@@ -256,7 +278,7 @@
                             display: none;
                         }
                     }
-                
+
                     .pub-header-themed-box {
                         &:after {
                             display: none;

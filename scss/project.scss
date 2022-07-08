@@ -3,6 +3,8 @@
 @import "./common";
 
 @include when-project {
+    background: var(--arcadia-white);
+
     .col-12 {
         margin-top: 0;
         margin-bottom: 0;
@@ -109,6 +111,13 @@
         }
 
         .layout-html-component {
+            &:nth-last-child(2) { 
+                .block-content { 
+                    margin-bottom: 0
+                }
+            }
+
+            &:nth-last-child(2),
             &:last-child {
                 .block-content,
                 .col-12 {
@@ -125,11 +134,21 @@
                 }
             }
         }
+
+        .layout-pubs-block {
+            .block-content {
+                width: 100%;
+            }
+
+            .col-12 {
+                width: 96%;
+            }
+        }
     }
 
     /**
-        * Common blocks
-        */
+    * Common blocks
+    */
 
     @include questions;
 }

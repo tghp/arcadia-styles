@@ -11,10 +11,10 @@
 	--arcadia-white-20: #FFFFFF33;
 	--arcadia-charcoal: #484B50;
 	--arcadia-dawn: #F8F4F1;
-	--arcadia-forest: #596F74;
+	--arcadia-forest: #4D635E;
 	--arcadia-light-grey: #EBEDE8;
-	--arcadia-marine-blue: #8A99AD;
-	--arcadia-orange: #FFB984;
+	--arcadia-marine-blue: #37394A;
+	--arcadia-orange: #FFA35C;
 	--arcadia-seafoam: #F9FCF0;
 	--arcadia-shell: #EDE0D6;
 }
@@ -22,7 +22,7 @@
 @include when-any {
 	@include type-body;
 	overscroll-behavior: none;
-	background: var(--arcadia-seafoam);
+	background-color: var(--arcadia-white);
 	color: var(--arcadia-charcoal);	
 	-webkit-font-smoothing: antialiased;
 
@@ -105,15 +105,19 @@
 		position: sticky;
 		top: 0;
 		z-index: 31415;
-		font-family: 'SuisseIntl-Mono', sans-serif;
 
 		button,
 		a {
 			color: var(--arcadia-charcoal);
 			font-size: 12px;
-			text-transform: uppercase;
 			height: auto;
 			line-height: 1;
+			letter-spacing: 0.05em;
+
+			&,
+			span {
+				text-transform: none;
+			}
 		}
 
 		&,
@@ -283,7 +287,7 @@
 		padding: 40px 0 36px;
 		background: transparent;
 		font-size: 12px;
-		font-weight: 600;
+		font-weight: 400;
 
 		a {
 			color: var(--arcadia-white);
@@ -295,7 +299,12 @@
 		}
 
 		.right {
-			display: flex;
+			display: grid;
+			grid-template-areas: 
+				"logo nav 	 nav 	nav 	social"
+				"logo credit credit pubpub  pubpub";
+			grid-template-columns: 1fr repeat(4, auto);
+			grid-template-rows: repeat(2, auto);
 			max-width: none;
 			align-items: center;
 			border: none;
@@ -309,28 +318,36 @@
 				justify-content: space-between;
 			}
 
-			&:before {
+			&:before,
+			&:after {
 				@include pseudo-element-create;
+				color: var(--arcadia-white);
+				border-top: 1px solid var(--arcadia-white-20);
+				align-self: start;
+			}
+
+			&:before {
 				content: 'Published with';
+				grid-area: pubpub;
 				display: flex;
 				align-items: center;
 				background-image: $pubpub-svg;
-				background-size: auto 100%;
+				background-size: auto 17px;
 				background-repeat: no-repeat;
-				background-position: 100% 0;
-				height: 17px;
+				background-position: 100% 100%;
 				width: fit-content;
-				padding-right: 78px;
-				order: 2;
-				color: var(--arcadia-white);
-				
-				@include mq.mq($from: m) {
-					margin: 0 36px 0 auto;
-				}
+				padding: 14px 78px 0 0;
+			}
+
+			&:after {
+				grid-area: credit;
+				content: 'Designed by And—Now. Built by TGHP';
+				padding: 15px 30px 0 0;
+
 			}
 
 			.footer-title {
-				order: 1;
+				grid-area: logo;
 
 				a {
 					display: block;
@@ -344,10 +361,11 @@
 			}
 
 			.separated {
+				grid-area: nav;
 				display: flex;
 				align-items: center;
-				padding: 0;
-				order: 3;
+				justify-self: end;
+				padding: 0 0 15px 0;
 				line-height: 1;
 
 				li {
@@ -369,22 +387,48 @@
 			}
 
 			.social-list {
+				grid-area: social;
 				display: flex;
 				align-items: center;
-				order: 4;
+				padding: 0 0 15px 40px;
 
 				@include mq.mq($until: m) {
 					gap: 30px;
 				}
 				
 				@include mq.mq($from: m) {
-					margin-left: 55px;
+					// margin-left: 55px;
 				}
 
 				svg {
 					height: 22px;
 					width: auto;
 				}
+			}
+		}
+	}
+
+	.subscribe-bar {
+		@include full-bleed-background(var(--arcadia-orange));
+		@include type-heading-2;
+		color: var(--arcadia-white);
+		display: flex;
+		justify-content: space-between;
+		padding: 25px 0;
+
+		@include mq.mq($until: l) {
+			flex-direction: column;
+		}
+
+		&__title {
+			@include mq.mq($until: l) {
+				margin-bottom: 10px;
+			}
+		}
+
+		&__buttons {
+			a {
+				@include button-pill-white;
 			}
 		}
 	}
@@ -519,36 +563,6 @@
 		}
 	}
 
-	.layout-pubs-block {
-		.row {
-			&:last-child {
-				.col-6 {
-					&:last-child {
-						.pub-preview-component {
-							margin-bottom: 0;
-						}		
-					}
-				}
-			}
-
-			.col-6 {
-				.pub-preview-component {
-					margin-bottom: 30px;
-				}
-			}
-		}
-
-		.row {
-			display: flex;
-			flex-direction: column;
-
-			> div {
-				margin: 0 2%;
-				width: 96%;
-			}
-		}
-	}
-
 	.layout-text-component {
 		iframe[src*="platform.twitter.com"] {
 			margin: -8px;
@@ -603,11 +617,15 @@
 				}
 			}
 
+			.content-wrapper {
+				padding: 0;
+			}
+
 			.content {
 				display: flex;
 				flex-direction: column;
 				overflow: visible;
-				padding: 40px;
+				padding: 6.5%;
 
 				> * {
 					padding-left: 0;
@@ -632,8 +650,10 @@
 					margin: 0 0 15px;
 
 					.date {
-						@include type-meta;
+						@include type-body-tiny;
 						color: var(--arcadia-marine-blue);
+						letter-spacing: 0.05em;
+						font-style: normal;
 					}
 				}
 
@@ -657,23 +677,55 @@
 
 				.pub-preview-edges-component {
 					margin: 20px 0 0;
+
+					&, 
+					a {
+						color: var(--arcadia-forest);
+					}
+
 					.hairline {
 						display: none;
 					}
 
 					.heading {
-						color: var(--arcadia-forest) !important;
+						color: var(--arcadia-orange) !important;
 					}
 
 					.listing {
 						strong {
-							color: var(--arcadia-forest) !important;
+							font-weight: 400;
+							color: var(--arcadia-orange) !important;
 						}
 					}
 				}
 
 				.bp3-popover-wrapper {
 					display: none;
+				}
+			}
+
+			&.medium-preview {
+				@include mq.mq($from: l) {
+					grid-template-columns: 21fr 43fr;
+					grid-template-rows: auto;	
+				}
+
+				.preview-image-wrapper {
+					.preview-image-component {
+						aspect-ratio: 18 / 25;
+					}
+				}
+
+				.content { 
+					.title-wrapper {
+						.pub-title {
+							@include type-heading-2-smaller;
+						}
+					}
+
+					.description {
+						display: none;
+					}
 				}
 			}
 		}

@@ -32,14 +32,14 @@
 }
 
 @mixin type-meta {
-    font-family: 'SuisseIntl-Mono', sans-serif;
+    font-family: 'SuisseIntl', sans-serif;
 	font-weight: 600;
 	font-size: 12px;
     font-style: normal;
 }
 
 @mixin type-meta-caption {
-    font-family: 'SuisseIntl-Mono', sans-serif;
+    font-family: 'SuisseIntl', sans-serif;
 	font-weight: 600;
 	font-size: 18px;
     font-style: normal;
@@ -107,7 +107,7 @@
     font-family: 'SuisseIntl', sans-serif;
     font-size: 20px;
     line-height: 1.5;
-    font-weight: 400;
+    font-weight: 600;
 
     @include mq.mq($until: m) {
         font-size: 16px;
@@ -115,7 +115,7 @@
 }
 
 @mixin type-heading-4 {
-    font-family: 'SuisseIntl-Mono', sans-serif;
+    font-family: 'SuisseIntl', sans-serif;
     font-size: 16px;
     line-height: 1.5;
     font-weight: 600;
@@ -126,7 +126,7 @@
 }
 
 @mixin type-heading-4-smaller {
-    font-family: 'SuisseIntl-Mono', sans-serif;
+    font-family: 'SuisseIntl', sans-serif;
     font-size: 14px;
     line-height: 1.5;
     font-weight: 600;
@@ -148,7 +148,15 @@
     min-width: 145px;
     text-align: center;
     border: none;
+    font-weight: 400;
     cursor: pointer;
+}
+
+@mixin button-pill-white {
+    @include button-pill;
+    background: var(--arcadia-white);
+    color: var(--arcadia-charcoal);
+    border-color: var(--arcadia-white);
 }
 
 @mixin button-line {
@@ -156,7 +164,9 @@
     border: none;
     border-bottom: 1px solid;
     padding-bottom: 8px;
+    text-transform: uppercase;
     cursor: pointer;
+    -webkit-font-smoothing: antialiased;
 }
 
 /**
