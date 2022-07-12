@@ -203,7 +203,7 @@
     .home-intro {
         @include full-bleed-background(var(--arcadia-seafoam));
 
-        &:before {
+        &:after {
             @include mq.mq($from: xl) {
                 @include pseudo-element-create;
                 grid-area: gap;
