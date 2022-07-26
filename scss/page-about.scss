@@ -1,0 +1,17 @@
+@use './abstracts/mq-settings';
+@use './abstracts/mq';
+@import "./common";
+
+@include when-page('about') {
+    .block-content,
+    .row > * {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    /**
+     * Common blocks
+     */
+
+     @include questions;
+}
