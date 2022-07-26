@@ -722,6 +722,7 @@
 
 				.pub-preview-edges-component {
 					margin: 20px 0 0;
+					font-size: 12px;
 
 					&, 
 					a {
@@ -729,7 +730,9 @@
 					}
 
 					.hairline {
-						display: none;
+						margin-top: 0;
+						margin-bottom: 20px;
+						border-color: #F5F6F4;
 					}
 
 					.heading {
