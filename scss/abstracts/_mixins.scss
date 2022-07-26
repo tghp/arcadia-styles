@@ -208,6 +208,12 @@
     }
 }
 
+@mixin when-page ($page) {
+    html[data-reactroot] > head + body.active-page-#{$page} {
+        @content;
+    }
+}
+
 @mixin when-project {
     // Look for a class name containing active-collection-, there is no generic collection class added, so this is the only way
     html[data-reactroot] > head + body[class*="active-collection-"] {
