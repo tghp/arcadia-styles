@@ -36,130 +36,6 @@
         }
     }
 
-    .layout-pubs-block {
-		.container {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-		}
-	
-		.row {
-			display: flex;
-			flex-direction: column;
-            grid-column: span 2;
-
-            > div {
-                margin: 0 2%;
-                width: 96%;
-            }
-
-            &:not(:first-child) {
-                @include mq.mq($from: xl) {
-                    grid-column: span 1;
-                }
-
-                &:nth-child(even) {
-                    > div {
-                        @include mq.mq($from: xl) {
-                            width: 95%;
-                            margin: 0 1% 0 4%;
-                        }
-                    }
-                }
-    
-                &:nth-child(odd) {
-                    > div {
-                        @include mq.mq($from: xl) {
-                            width: 95%;
-                            margin: 0 4% 0 1%;
-                        }
-                    }
-                }
-            }
-
-            &:not(:last-child) {
-                margin-bottom: 30px;
-            }
-
-            &:first-child {
-                .pub-preview-component {
-                    &,
-                    &:not(.expanded) {
-                        .content {
-                           .authors {
-                                display: none;
-                            }
-                        }
-                    }
-                }
-			}
-
-			&:not(:first-child):not(:nth-child(n+4)) {
-                @include mq.mq($from: xl) {
-                    .pub-preview-component {
-                        &,
-                        &:not(.expanded) {
-                            @include mq.mq($from: l) {
-                                grid-template-columns: 21fr 43fr;
-                                grid-template-rows: auto;	
-                            }
-
-                            .preview-image-wrapper {
-                                .preview-image-component {
-                                    aspect-ratio: 18 / 25;
-                                }
-                            }
-
-                            .content { 
-                                .title-wrapper {
-                                    .pub-title {
-                                        @include type-heading-2-smaller;
-                                    }
-                                }
-
-                                .description {
-                                    display: none;
-                                }
-                            }
-                        }
-                    }
-                }
-			}
-
-            &:nth-child(n+4) {
-                .pub-preview-component {
-                    &,
-                    &:not(.expanded) {
-                        grid-template-columns: 1fr;
-                        border: none;
-                        border-left: 1px solid var(--arcadia-light-grey);
-                    
-                        .preview-image-wrapper {
-                            display: none;
-                        }
-
-                        .content {
-                            padding: 3.5%;
-
-                            .title-wrapper {
-                                .pub-title {
-                                    @include type-heading-2-smaller;
-                                }
-                            }
-
-                            .pub-preview-edges-component {
-                                &, 
-                                a {
-                                    color: inherit;
-                                }
-                                
-                            }
-                        }
-                    }
-                }
-            }
-		}
-	}
-
     /**
      * Common blocks
      */
@@ -274,6 +150,8 @@
         }
 
         &--light {
+            @include full-bleed-background(var(--arcadia-seafoam));
+            
             #{$self}__title {
                 border-color: var(--arcadia-black-50);
                 color: var(--arcadia-forest);
@@ -292,6 +170,7 @@
             border-bottom: 1px solid;
             padding-bottom: 20px;
             margin-bottom: 30px;
+            font-weight: 400;
         }
 
         &__main {
@@ -385,5 +264,20 @@
 
     .home-pub-intro {
         padding-bottom: 0;
+    }
+
+    .layout-pubs-block {
+        .row {
+            margin-top: 50px;
+            margin-bottom: 50px;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
     }
 }
