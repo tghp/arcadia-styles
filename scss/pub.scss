@@ -744,14 +744,22 @@
         }
 
         .pub-discussions-component {
-            .thread-comment-component.input {
-                margin: 20px 0 30px;
+            .thread-comment-component {
+                &.input {
+                    margin: 20px 0 30px;
+    
+                    .content-wrapper {
+                        margin: 0;
+    
+                        .bp3-button {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
 
-                .content-wrapper {
-                    margin: 0;
-
-                    .bp3-button {
-                        margin-bottom: 0;
+                .editor {
+                    p {
+                        font-size: 14px;
                     }
                 }
             }
