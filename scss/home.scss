@@ -278,6 +278,11 @@
             &:last-child {
                 margin-bottom: 0;
             }
+
+            &:only-child .col-12:only-child {
+                margin-top: -2em;
+                margin-bottom: -2em;
+            }
         }
     }
 }

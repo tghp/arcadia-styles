@@ -304,10 +304,6 @@
 
         .utility-buttons-component {
             padding: 0;
-
-            a[href*="dash/pub"] {
-                display: none;
-            }
         }
 
         .draft-release-buttons-component {
@@ -740,6 +736,11 @@
         
         .inner {
             overflow: hidden;
+
+            @include mq.mq($until: m) {
+                width: auto;
+                grid-column: 1/-1;
+            }
         }
 
         .pub-discussions-component {
@@ -798,6 +799,24 @@
                 &[disabled] {
                     opacity: 0.5;
                 }
+            }
+        }
+    }
+
+    .pub-bottom-section-component {
+        .top-row {
+            .left-title {
+                width: 9em;
+                font-weight: 600;
+                -webkit-font-smoothing: antialiased;
+            }
+        }
+
+        .center-content-item {
+            font-weight: 400;
+
+            &:before {
+                display: none;
             }
         }
     }
