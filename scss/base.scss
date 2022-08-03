@@ -521,14 +521,19 @@
 			color: var(--arcadia-marine-blue);
 		}
 
+		ul,
+		ol {
+			li {
+				font-family: inherit;
+			}
+		}
+
 		ul {
 			ul {
 				margin-bottom: 0;
 			}
 			
 			li {
-				font-family: inherit;
-				
 				> p {
 					margin: 0;
 				}
