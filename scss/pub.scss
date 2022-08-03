@@ -813,10 +813,21 @@
 
     .pub-bottom-section-component {
         .top-row {
+            @include mq.mq($until: s) {
+                flex-wrap: wrap;
+            }
+
             .left-title {
-                width: 9em;
                 font-weight: 600;
                 -webkit-font-smoothing: antialiased;
+
+                @include mq.mq($until: s) {
+                    width: 100%;
+                }
+
+                @include mq.mq($from: s) {
+                    width: 9em;
+                }
             }
         }
 
