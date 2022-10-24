@@ -1,0 +1,50 @@
+@use './abstracts/mq-settings';
+@use './abstracts/mq';
+@import "./common";
+
+@include when-any {
+    #user-container {
+        .user-nav-component {
+            .bp3-tabs a {
+                font-size: 0;
+                height: 40px;
+
+                &:after {
+                    font-size: 16px;
+                }
+
+                &:first-child:after {
+                    content: 'All contributions';
+                }
+
+                &[href$="authored"]:after {
+                    content: 'Byline contributions';
+                }
+            }   
+        }
+
+        .container.content {
+            @include mq.mq($from: xl) {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .row {
+                &,
+                & .col-12 {
+                    display: flex;
+                    flex-direction: column;
+                }
+                
+                & .col-12,
+                & .col-12 .pub-preview-component {
+                    height: 100%;
+                }
+                
+                & .col-12 .pub-preview-component:after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
