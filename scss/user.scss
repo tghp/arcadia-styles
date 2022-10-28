@@ -23,6 +23,18 @@
             }   
         }
 
+        .user-header-component {
+          .details {
+            .links { 
+              a {
+                @include mq.mq($until: s) {
+                  display: block;
+                }
+              }
+            }
+          }
+        }
+
         .container.content {
             @include mq.mq($from: xl) {
                 display: grid;
