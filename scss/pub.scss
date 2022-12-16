@@ -336,7 +336,10 @@
         max-width: $max-width;
         width: 96%;
         margin: 0 auto;
-        grid-template-columns: 2% 67% 4% 1fr 2%;
+
+        @include mq.mq($from: m) {
+          grid-template-columns: 2% 67% 4% 1fr 2%;  
+        }
     }
 
     .pub-body-component {
