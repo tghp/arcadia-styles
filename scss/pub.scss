@@ -351,6 +351,7 @@
             h1:first-child ~ ul:not(h1 ~ h1 ~ ul),
             h1:first-child ~ blockquote:not(h1 ~ h1 ~ blockquote) {
                 @include full-bleed-background(var(--arcadia-light-grey), $extra: true);
+                overflow: visible;
 
                 &:before {
                     top: -1em;
