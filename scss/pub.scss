@@ -520,6 +520,14 @@
                         }
                     }
                 }
+
+                .tableWrapper {
+                  overflow: scroll;
+
+                  > table {
+                    min-width: 600px !important;
+                  }
+                }
             }
         }
     }
