@@ -345,6 +345,14 @@
     .pub-body-component {
         margin: 0;
 
+        @include mq.mq($from: m) {
+          font-size: 20px;
+        }
+
+        @include mq.mq($until: m) {
+          font-size: 16px;
+        }
+
         .editor {
             h1:first-child,
             h1:first-child ~ p:not(h1 ~ h1 ~ p),

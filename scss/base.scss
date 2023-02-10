@@ -25,6 +25,7 @@
 	background-color: var(--arcadia-white);
 	color: var(--arcadia-charcoal);	
 	-webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 
 	/**
 		* Common
@@ -248,17 +249,22 @@
 		ul.nav-list {
 			margin-right: 10px;
 			
-			a {
-				margin-right: 15px;
 
-				&:last-child {
-					margin-right: 0;
-				}
+      li {
+        &:last-child {
+          a {
+            margin-right: 0;
+          }
+        }
 
-				.bp3-icon-share {
-					display: none;
-				}
-			}
+        a {
+          margin-right: 15px;
+  
+          .bp3-icon-share {
+            display: none;
+          }
+        }
+      }
 		}
 
 		ul.social-list {

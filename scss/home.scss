@@ -283,6 +283,12 @@
                 margin-top: -2em;
                 margin-bottom: -2em;
             }
+
+            .col-6:not(:last-child) {
+              @include mq.mq($until: l) {
+                margin-bottom: 50px;
+              }
+            }
         }
     }
 }
