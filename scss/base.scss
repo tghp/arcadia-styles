@@ -17,6 +17,10 @@
 	--arcadia-orange: #FFA35C;
 	--arcadia-seafoam: #F9FCF0;
 	--arcadia-shell: #EDE0D6;
+  --community-accent-dark: #09090A;
+  --community-accent-dark-faded-30: #09090A;
+  --community-accent-dark-faded: #09090A;
+  --pubpub-active-discussion-highlight-color: #EDE0D6;
 }
 
 @include when-any {
@@ -819,4 +823,10 @@
 	.user-notifications-popover {
 		z-index: 314159 !important;
 	}
+
+  .bp3-button-group {
+    svg {
+      fill: var(--arcadia-black);
+    }
+  }
 }
