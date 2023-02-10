@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "watch": "sass --watch --update --style=expanded scss:css",
-    "build": "sass --no-source-map --style=compressed scss:css",
+    "build": "sass --no-source-map --style=compressed --no-charset scss:css",
     "release": "rm ./css/*.css*; npm run build && for CSSFILE in $(ls -1 ./css/*.css); do CSSFILENAME=$(basename $CSSFILE);echo \"/* $CSSFILENAME */\"; cat $CSSFILE; done"
   },
   "author": "",
