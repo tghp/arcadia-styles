@@ -448,6 +448,10 @@
                   text-align: start;
                   text-align-last: start;
                 }
+
+                > p:only-child {
+                  display: inline;
+                }
               }
             }
 
