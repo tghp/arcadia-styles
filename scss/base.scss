@@ -70,10 +70,6 @@
 			top: 0;
 			z-index: 3141;
 
-      @include mq.mq($until: l) {
-        overflow-x: hidden;
-      }
-
 			@include mq.mq($from: s) {
 				height: $header-height;
 			}
