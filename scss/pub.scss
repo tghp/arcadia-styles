@@ -354,6 +354,14 @@
     }
 
     .editor {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        scroll-margin-top: 150px;
+      }
+
       h1:first-child,
       h1:first-child ~ p:not(h1 ~ h1 ~ p),
       h1:first-child ~ ul:not(h1 ~ h1 ~ ul),
