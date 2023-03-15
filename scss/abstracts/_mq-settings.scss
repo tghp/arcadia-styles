@@ -1,17 +1,17 @@
-@use './variables' as v;
+@use "./variables" as v;
 
 $breakpoints: (
-    xs: 320px,
-    s: 540px,
-    m: 751px,
-    l: 1024px,
-    xl: 1200px,
-    max: v.$max-width,
+  xs: 320px,
+  s: 540px,
+  m: 751px,
+  l: 1024px,
+  xl: 1200px,
+  max: v.$max-width,
 );
 
-$media-type: 'screen';
+$media-type: "screen";
 
-@use './mq' with (
-    $breakpoints: $breakpoints,
-    $media-type: $media-type,
+@use "./mq" with (
+  $breakpoints: $breakpoints,
+  $media-type: $media-type
 );

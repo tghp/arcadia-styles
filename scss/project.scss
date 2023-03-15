@@ -1,154 +1,153 @@
-@use './abstracts/mq-settings';
-@use './abstracts/mq';
+@use "./abstracts/mq-settings";
+@use "./abstracts/mq";
 @import "./common";
 
 @include when-project {
-    background: var(--arcadia-white);
+  background: var(--arcadia-white);
 
-    .col-12 {
+  .col-12 {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    @include mq.mq($from: l) {
+      width: 67%;
+    }
+  }
+
+  &,
+  .editor {
+    h1 {
+      @include type-heading-1;
+
+      @include mq.mq($from: l) {
+        margin: 80px 0 30px;
+      }
+
+      @include mq.mq($until: l) {
+        margin: 50px 0 20px;
+      }
+    }
+
+    h2,
+    h3 {
+      color: var(--arcadia-marine-blue);
+      margin: 42px 0 20px;
+    }
+
+    h2 {
+      @include type-heading-2;
+    }
+
+    h3 {
+      @include type-heading-3;
+    }
+
+    hr {
+      border-top: 1px solid var(--arcadia-shell);
+      border-bottom: none;
+      margin-bottom: 35px;
+
+      @include mq.mq($from: l) {
+        margin-right: -43.4%;
+      }
+    }
+  }
+
+  .layout-component {
+    .layout-text-component {
+      .block-content {
         margin-top: 0;
         margin-bottom: 0;
-        
+      }
+
+      figure {
+        display: grid;
+        gap: 20px;
+        width: auto;
+        margin: 40px 0 20px 0;
+
         @include mq.mq($from: l) {
-            width: 67%;
+          grid-template-columns: 65fr 31fr;
+          grid-template-rows: auto;
+          margin-right: -15%;
+          max-width: 115%;
         }
+
+        @include mq.mq($until: l) {
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(2, auto);
+          max-width: 100%;
+        }
+
+        figcaption {
+          text-align: left;
+          margin: 0;
+
+          p {
+            margin-bottom: 5px;
+          }
+
+          strong {
+            font-weight: 600;
+          }
+
+          p {
+            @include type-caption;
+            margin-bottom: 20px;
+
+            &:first-child:not(:only-child) {
+              display: block;
+              font-weight: 400;
+              color: var(--arcadia-marine-blue);
+            }
+          }
+
+          br {
+            display: none;
+          }
+        }
+      }
     }
 
-    &,
-    .editor {
-        h1 {
-            @include type-heading-1;
-            
-            @include mq.mq($from: l) {
-                margin: 80px 0 30px;
-            }
-            
-            @include mq.mq($until: l) {
-                margin: 50px 0 20px;
-            }
+    .layout-html-component {
+      &:nth-last-child(2) {
+        .block-content {
+          margin-bottom: 0;
+        }
+      }
+
+      &:nth-last-child(2),
+      &:last-child {
+        .block-content,
+        .col-12 {
+          margin-top: 0;
+          margin-bottom: 0;
         }
 
-        h2,
-        h3 {
-            color: var(--arcadia-marine-blue);
-            margin: 42px 0 20px;
+        .block-content {
+          width: 100%;
         }
 
-        h2 {
-            @include type-heading-2;
-            
+        .col-12 {
+          width: 96%;
         }
-
-        h3 {
-            @include type-heading-3;
-        }
-
-        hr {
-            border-top: 1px solid var(--arcadia-shell);
-            border-bottom: none;
-            margin-bottom: 35px;
-            
-            @include mq.mq($from: l) {
-                margin-right: -43.4%;
-            }
-        }
+      }
     }
 
-    .layout-component {
-        .layout-text-component {
-            .block-content {
-                margin-top: 0;
-                margin-bottom: 0;
-            }
+    .layout-pubs-block {
+      .block-content {
+        width: 100%;
+      }
 
-            figure {
-                display: grid;
-                gap: 20px;
-                width: auto;
-                margin: 40px 0 20px 0;
-
-                @include mq.mq($from: l) {
-                    grid-template-columns: 65fr 31fr;
-                    grid-template-rows: auto;
-                    margin-right: -15%;
-                    max-width: 115%;                    
-                }
-
-                @include mq.mq($until: l) {
-                    grid-template-columns: 1fr;
-                    grid-template-rows: repeat(2, auto);
-                    max-width: 100%;
-                }
-
-                figcaption {
-                    text-align: left;
-                    margin: 0;
-
-                    p {
-                        margin-bottom: 5px;
-                    }
-
-                    strong {
-                        font-weight: 600;
-                    }
-                    
-                    p {
-                        @include type-caption;
-                        margin-bottom: 20px; 
-                        
-                        &:first-child:not(:only-child) {
-                            display: block;
-                            font-weight: 400;
-                            color: var(--arcadia-marine-blue);
-                        }
-                    }
-
-                    br {
-                        display: none;
-                    }
-                }
-            }
-        }
-
-        .layout-html-component {
-            &:nth-last-child(2) { 
-                .block-content { 
-                    margin-bottom: 0
-                }
-            }
-
-            &:nth-last-child(2),
-            &:last-child {
-                .block-content,
-                .col-12 {
-                    margin-top: 0;
-                    margin-bottom: 0;
-                }
-
-                .block-content {
-                    width: 100%;
-                }
-
-                .col-12 {
-                    width: 96%;
-                }
-            }
-        }
-
-        .layout-pubs-block {
-            .block-content {
-                width: 100%;
-            }
-
-            .col-12 {
-                width: 96%;
-            }
-        }
+      .col-12 {
+        width: 96%;
+      }
     }
+  }
 
-    /**
+  /**
     * Common blocks
     */
 
-    @include questions;
+  @include questions;
 }
