@@ -578,6 +578,7 @@
     &.active {
       .discussion-nav-component {
         height: auto;
+        padding: 0 0 18px;
 
         .bubble {
           background: var(--arcadia-forest) !important;
@@ -603,8 +604,6 @@
     }
 
     .discussion-nav-component {
-      padding: 0 0 18px;
-
       &:not([style*="solid transparent"]) {
         border-color: var(--arcadia-forest) !important;
       }
