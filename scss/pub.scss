@@ -343,7 +343,13 @@
   }
 
   .pub-document-component {
-    overflow: hidden;
+    @include mq.mq($until: max) {
+      overflow: hidden;
+
+      &:has(.pub-draft-header-component) {
+        overflow: visible;
+      }
+    }
   }
 
   .pub-body-component {
